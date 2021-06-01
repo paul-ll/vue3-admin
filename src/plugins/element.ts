@@ -15,9 +15,15 @@ import {
   ElTooltip,
   ElDropdown,
   ElDropdownMenu,
-  ElDropdownItem
+  ElDropdownItem,
+  ElScrollbar,
+  ElDrawer,
+  ElColorPicker,
+  ElSwitch
 } from 'element-plus'
+// 默认主题
 import 'element-plus/lib/theme-chalk/index.css'
+
 // Element Plus 组件内部默认使用英语
 // https://element-plus.gitee.io/#/zh-CN/component/i18n
 import lang from 'element-plus/lib/locale/lang/zh-cn'
@@ -50,7 +56,11 @@ export default (app: App, options: ElementOptions): void => {
     ElTooltip,
     ElDropdown,
     ElDropdownMenu,
-    ElDropdownItem
+    ElDropdownItem,
+    ElScrollbar,
+    ElDrawer,
+    ElColorPicker,
+    ElSwitch
   ]
 
   components.forEach(component => {

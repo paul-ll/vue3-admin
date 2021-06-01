@@ -1,21 +1,24 @@
 <template>
-  <!-- <el-button type="primary">el-button</el-button> -->
-  <router-view></router-view>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useGenerateTheme } from '@/hooks/useGenerateTheme'
+
+export default defineComponent({
+  name: 'App',
+  setup() {
+    // 根据此时store中主题色生成
+    useGenerateTheme()
+  }
+})
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 </style>
