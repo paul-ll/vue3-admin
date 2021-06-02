@@ -136,6 +136,11 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     ]
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/index.vue')
+  },
+  {
     path: '/401',
     component: Layout,
     children: [
@@ -155,132 +160,6 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     component: () => import('@/views/error-page/404.vue'),
     meta: {
       hidden: true // 404 hidden掉
-    }
-  },
-  // 以下都是测试路由 测完可以删了
-  {
-    path: '/menu',
-    name: 'Menu Management1',
-    component: () => import(/* webpackChunkName: "menu" */ '@/views/system/menu.vue'),
-    meta: {
-      title: 'Menu Management1',
-      hidden: false,
-      breadcrumb: false
-    }
-  },
-  {
-    path: '/role',
-    name: 'Role Management1',
-    component: () => import(/* webpackChunkName: "role" */ '@/views/system/role.vue'),
-    meta: {
-      title: 'Role Management1',
-      hidden: false
-    }
-  },
-  {
-    path: '/user',
-    name: 'User Management1',
-    component: () => import(/* webpackChunkName: "user" */ '@/views/system/user.vue'),
-    meta: {
-      title: 'User Management1'
-    }
-  },
-  {
-    path: '/menu',
-    name: 'Menu Management2',
-    component: () => import(/* webpackChunkName: "menu" */ '@/views/system/menu.vue'),
-    meta: {
-      title: 'Menu Management2',
-      hidden: false,
-      breadcrumb: false
-    }
-  },
-  {
-    path: '/role',
-    name: 'Role Management2',
-    component: () => import(/* webpackChunkName: "role" */ '@/views/system/role.vue'),
-    meta: {
-      title: 'Role Management2',
-      hidden: false
-    }
-  },
-  {
-    path: '/user',
-    name: 'User Management2',
-    component: () => import(/* webpackChunkName: "user" */ '@/views/system/user.vue'),
-    meta: {
-      title: 'User Management2'
-    }
-  },
-  {
-    path: '/menu',
-    name: 'Menu Management3',
-    component: () => import(/* webpackChunkName: "menu" */ '@/views/system/menu.vue'),
-    meta: {
-      title: 'Menu Management3',
-      hidden: false,
-      breadcrumb: false
-    }
-  },
-  {
-    path: '/role',
-    name: 'Role Management3',
-    component: () => import(/* webpackChunkName: "role" */ '@/views/system/role.vue'),
-    meta: {
-      title: 'Role Management4',
-      hidden: false
-    }
-  },
-  {
-    path: '/user',
-    name: 'User Management3',
-    component: () => import(/* webpackChunkName: "user" */ '@/views/system/user.vue'),
-    meta: {
-      title: 'User Management3'
-    }
-  },
-  {
-    path: '/menu',
-    name: 'Menu Management4',
-    component: () => import(/* webpackChunkName: "menu" */ '@/views/system/menu.vue'),
-    meta: {
-      title: 'Menu Management4',
-      hidden: false,
-      breadcrumb: false
-    }
-  },
-  {
-    path: '/role',
-    name: 'Role Management4',
-    component: () => import(/* webpackChunkName: "role" */ '@/views/system/role.vue'),
-    meta: {
-      title: 'Role Management4',
-      hidden: false
-    }
-  },
-  {
-    path: '/user',
-    name: 'User Management4',
-    component: () => import(/* webpackChunkName: "user" */ '@/views/system/user.vue'),
-    meta: {
-      title: 'User Management4'
-    }
-  },
-  {
-    path: '/role',
-    name: 'Role Management5',
-    component: () => import(/* webpackChunkName: "role" */ '@/views/system/role.vue'),
-    meta: {
-      title: 'Role Management5',
-      hidden: false
-    }
-  },
-  {
-    path: '/user',
-    name: 'User Management5',
-    component: () => import(/* webpackChunkName: "user" */ '@/views/system/user.vue'),
-    meta: {
-      title: 'User Management5'
     }
   }
 ]

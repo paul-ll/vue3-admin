@@ -4,11 +4,13 @@ import createPersistedState from 'vuex-persistedstate'
 import app, { IAppState } from '@/store/modules/app'
 import tagsView, { ITagsViewState } from '@/store/modules/tagsView'
 import settings, { ISettingsState } from '@/store/modules/settings'
+import user, { IUserState } from '@/store/modules/user'
 import getters from './getters'
 
 // 模块声明在根状态下
 export interface IRootState {
   app: IAppState;
+  user: IUserState;
   tagsView: ITagsViewState;
   settings: ISettingsState;
 }
@@ -49,6 +51,7 @@ export default createStore<IRootState>({
   getters,
   modules: {
     app,
+    user,
     tagsView,
     settings
   }

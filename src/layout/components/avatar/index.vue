@@ -23,11 +23,18 @@
 
 <script lang="ts">
 import avatar from '@/assets/logo.png'
-import { defineComponent } from 'vue'
+import { defineComponent, getCurrentInstance } from 'vue'
+import { useStore } from '@/store'
+
 export default defineComponent({
   setup() {
+    const store = useStore()
+    const { proxy } = getCurrentInstance()!
     const logout = () => {
-      console.log('退出登录')
+      store.dispatch('user/logout').then(() => {
+        proxy?.$message.success('退出登录')
+        window.location.reload()
+      })
     }
     return {
       logout,

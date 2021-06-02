@@ -8,6 +8,8 @@ import 'normalize.css/normalize.css'
 import installElementPlus, { Size } from './plugins/element'
 // 挂载到vue实例上
 import { ElMessageBox, ElMessage, ElNotification } from 'element-plus'
+// 用户验证
+import './permission'
 // 全局 css
 import '@/styles/index.scss'
 // svg icons

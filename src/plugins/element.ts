@@ -19,10 +19,13 @@ import {
   ElScrollbar,
   ElDrawer,
   ElColorPicker,
-  ElSwitch
+  ElSwitch,
+  ElForm,
+  ElFormItem,
+  ElInput
 } from 'element-plus'
 // 默认主题
-import 'element-plus/lib/theme-chalk/index.css'
+// import 'element-plus/lib/theme-chalk/index.css'
 
 // Element Plus 组件内部默认使用英语
 // https://element-plus.gitee.io/#/zh-CN/component/i18n
@@ -60,7 +63,10 @@ export default (app: App, options: ElementOptions): void => {
     ElScrollbar,
     ElDrawer,
     ElColorPicker,
-    ElSwitch
+    ElSwitch,
+    ElForm,
+    ElFormItem,
+    ElInput
   ]
 
   components.forEach(component => {
