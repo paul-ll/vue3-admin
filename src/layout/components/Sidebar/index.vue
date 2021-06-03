@@ -30,7 +30,7 @@
 import { defineComponent, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import variables from '@/styles/variables.scss'
-import { routes } from '@/router'
+import { constantRoutes } from '@/router'
 import SidebarItem from './SidebarItem.vue'
 import { useStore } from '@/store'
 import Logo from './Logo.vue'
@@ -60,8 +60,11 @@ export default defineComponent({
     // 展开收起状态 稍后放store 当前是展开就让它收起
     const isCollapse = computed(() => !store.getters.sidebar.opened)
 
+    // 获取权限菜单
+    const menuList = computed(() => store.state.menu.authMenuTreeData)
+
     // 渲染路由
-    const menuRoutes = computed(() => routes)
+    const menuRoutes = computed(() => [...constantRoutes, ...menuList.value])
 
     // 获取主题色
     const themeColor = computed(() => store.getters.themeColor)
@@ -86,7 +89,8 @@ export default defineComponent({
   .sidebar-wrapper {
     .sidebar-container-menu {
       height: 100vh;
-      &.sidebar-show-logo {
+      &.sidebar-show-logo { // 显示logo时
+        // 100vh-50px
         height: calc(100vh - 50px);
       }
     }

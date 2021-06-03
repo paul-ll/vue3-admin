@@ -7,11 +7,14 @@
     </div>
     <template #dropdown>
       <el-dropdown-menu>
+        <el-dropdown-item v-if="username">
+          <span style="display: block" :style="{fontWeight: '500'}">用户名：{{username}}</span>
+        </el-dropdown-item>
         <router-link to="/">
           <el-dropdown-item>首页</el-dropdown-item>
         </router-link>
         <router-link to="/profile/index">
-          <el-dropdown-item>个人设置</el-dropdown-item>
+          <el-dropdown-item>个人中心</el-dropdown-item>
         </router-link>
         <el-dropdown-item divided @click="logout">
           <span style="display: block">退出登录</span>
@@ -22,8 +25,8 @@
 </template>
 
 <script lang="ts">
-import avatar from '@/assets/logo.png'
-import { defineComponent, getCurrentInstance } from 'vue'
+import defaultAvatar from '@/assets/logo.png'
+import { defineComponent, getCurrentInstance, computed } from 'vue'
 import { useStore } from '@/store'
 
 export default defineComponent({
@@ -36,9 +39,20 @@ export default defineComponent({
         window.location.reload()
       })
     }
+
+    const userInfo = computed(() => store.state.user.userInfo)
+    const avatar = computed(() => userInfo.value?.avatar || defaultAvatar)
+    const username = computed(() => userInfo.value?.username || '')
+
+    // onMounted(() => {
+    //   // 获取用户信息
+    //   store.dispatch('user/getUserInfo')
+    // })
+
     return {
       logout,
-      avatar
+      avatar,
+      username
     }
   }
 })

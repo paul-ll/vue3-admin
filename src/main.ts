@@ -14,6 +14,8 @@ import './permission'
 import '@/styles/index.scss'
 // svg icons
 import initSvgIcon from '@/icons/index'
+// 权限指令
+import permissionDirective from './directive/permission/index'
 
 const app = createApp(App)
 // 获取store里存储的size
@@ -25,6 +27,7 @@ app
   .use(installElementPlus, {
     size
   })
+  .use(permissionDirective)
   .use(initSvgIcon)
   .mount('#app')
 

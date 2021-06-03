@@ -6,13 +6,19 @@ import tagsView, { ITagsViewState } from '@/store/modules/tagsView'
 import settings, { ISettingsState } from '@/store/modules/settings'
 import user, { IUserState } from '@/store/modules/user'
 import getters from './getters'
+import menu, { IMenusState } from './modules/menu'
+import role, { IRoleState } from './modules/role'
+import permission, { IPermissionState } from './modules/permission'
 
 // 模块声明在根状态下
 export interface IRootState {
   app: IAppState;
   user: IUserState;
+  menu: IMenusState;
+  role: IRoleState;
   tagsView: ITagsViewState;
   settings: ISettingsState;
+  permission: IPermissionState;
 }
 
 // 通过下面方式使用 TypeScript 定义 store 能正确地为 store 提供类型声明。
@@ -53,7 +59,10 @@ export default createStore<IRootState>({
     app,
     user,
     tagsView,
-    settings
+    settings,
+    menu,
+    role,
+    permission
   }
 })
 
